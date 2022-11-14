@@ -1,0 +1,90 @@
+﻿[x-cloak] {
+    display: none !important;
+}
+
+button:focus {
+    outline: none;
+}
+
+.btn.focus,
+.btn:focus {
+    outline: 0;
+    box-shadow: none !important;
+}
+
+.btn-success.focus,
+.btn-success:focus {
+    box-shadow: none;
+}
+
+.AddModalBtn {
+    position: fixed;
+    border-radius: 50%;
+    right: 40px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-pointer {
+    cursor: pointer;
+}
+
+
+#profile_img .profile-pic {
+    /* border-radius: 50%; */
+    height: 200px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: multiply;
+    vertical-align: middle;
+    text-align: center;
+    color: transparent;
+    transition: all .3s ease;
+    text-decoration: none;
+    /* cursor: pointer; */
+    overflow: hidden;
+}
+
+#profile_img .profile-pic {
+    z-index: 10;
+    color: black;
+    transition: all .3s ease;
+    text-decoration: none;
+}
+
+#profile_img .profile-pic label {
+    display: flex;
+    position: absolute;
+    top: 5px;
+    right: 6px;
+    font-size: 13px;
+    background: #4343437a;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#fileToUpload {
+    display: none;
+    cursor: pointer;
+}
+
+#profile_img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    border-bottom: 1px solid lightgray;
+}
+
+.error {
+    color: red;
+}
