@@ -10,14 +10,6 @@ return [
             'route' => 'users',
             'iconClass' => 'fa-solid fa-users',
         ],
-        'Category' => [
-            'route' => 'category',
-            'iconClass' => 'fa-solid fa-shapes',
-        ],
-        'Blogs' => [
-            'route' => 'blogs',
-            'iconClass' => 'fa-solid fa-blog',
-        ],
         'Profile' => [
             'route' => 'profile',
             'iconClass' => 'fa-regular fa-user',

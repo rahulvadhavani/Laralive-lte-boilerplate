@@ -18,14 +18,10 @@ class Dashboard extends Component
         $data = [];
         $statistics = Cache::remember('statistics', 60 * 15, function () {
             return [
-                'blogCount' => Blog::count(),
-                'categoryCount' => Category::count(),
                 'UsersCount' => User::userRole()->count()
             ];
         });
         $data['Users'] = ['count' => $statistics['UsersCount'], 'route' => route('users'), 'class' => 'bg-primary', 'icon' => 'fas fa-solid fa-users'];
-        $data['Blogs'] = ['count' => $statistics['blogCount'], 'route' => route('blogs'), 'class' => 'bg-warning', 'icon' => 'fa-solid fa-blog'];
-        $data['Categories'] = ['count' => $statistics['categoryCount'], 'route' => route('category'), 'class' => 'bg-success', 'icon' => 'fa-solid fa-shapes'];
         $this->cards = $data;
     }
 

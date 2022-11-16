@@ -3,8 +3,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\{Profile,Dashboard,StaticPage};
-use App\Http\Livewire\Admin\Category\{Category};
-use App\Http\Livewire\Admin\Blog\Blogs;
 use App\Http\Livewire\Admin\User\Users;
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Artisan;
@@ -32,8 +30,6 @@ Route::group(['prefix' => 'admin'],function(){
 Route::group(['prefix' => 'admin','middleware' => ['auth','admin']],function(){
     Route::get('logout', [LoginController::class,'logout'])->name('admin.logout');
     Route::get('users',Users::class)->name('users');
-    Route::get('category',Category::class)->name('category');
-    Route::get('blogs',Blogs::class)->name('blogs');
     Route::get('dashboard', Dashboard::class)->name('dashboard');
     Route::get('profile', Profile::class)->name('profile');
     Route::get('static-page/{slug}', StaticPage::class)->name('static-page');
