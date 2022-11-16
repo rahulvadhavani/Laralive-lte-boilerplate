@@ -79,7 +79,6 @@
     </div>
   </div>
 </div>
-
 <div wire:ignore.self class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="pageModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
     <div class="modal-content card" wire:ignore.self class="modal fade">
