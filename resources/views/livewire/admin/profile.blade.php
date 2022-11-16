@@ -69,7 +69,7 @@
                                  </div>
                               </div>
                               <div class="text-right">
-                                 <button type="submit" class="btn btn-primary">Update Profile</button>
+                                 <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="btn btn-primary">Update Profile <span  wire:loading wire:target="submit"><i class="fa-solid fa-circle-notch fa-spin"></i></span></button>
                               </div>
                            </form>
                         </div>
@@ -103,7 +103,7 @@
                                  </div>
                               </div>
                               <div class="text-right">
-                                 <button type="submit" class="btn btn-primary">Update</button>
+                                 <button type="submit" wire:target="updatePassword" wire:loading.attr="disabled" class="btn btn-primary">Update <span  wire:loading wire:target="updatePassword"><i class="fa-solid fa-circle-notch fa-spin"></i></span></button>
                               </div>
                            </form>
                         </div>
@@ -189,7 +189,7 @@
                                  </div>
                               </div>
                               <div class="text-right">
-                                 <button type="submit" class="btn btn-primary">Submit</button>
+                                 <button type="submit" wire:loading.attr="disabled" wire:target="saveSetting" class="btn btn-primary">Submit <span  wire:loading wire:target="saveSetting"><i class="fa-solid fa-circle-notch fa-spin"></i></span></button>
                               </div>
                            </form>
                         </div>

@@ -121,9 +121,6 @@ class Blogs extends Component
         $param = $this->validate();
         $user_id = auth()->user()->id;
         $param['user_id'] = $user_id;
-        if ($param['image_thumbnail'] == null) {
-            unset($param['image_thumbnail']);
-        }
         $blog = Blog::where('id', $param['recordId'])->first();
         $param = (object) $param;
         $blogContent = ['blog_body' => $param->blog_body, 'meta_description' => $param->meta_description, 'seo_title' => $param->seo_title, 'tags' => $param->tags];
@@ -131,6 +128,8 @@ class Blogs extends Component
             if (isset($param->image_thumbnail) && $param->image_thumbnail != null) {
                 $img = basename($blog->image_thumbnail);
                 $param->image_thumbnail = $this->image_thumbnail->storeAs('blogs/image_thumbnail', $img, 'userPublic');
+            }else{
+                unset($param->image_thumbnail);
             }
             $blogContent['blog_id'] = $blog->id;
             $blog->update((array) $param);

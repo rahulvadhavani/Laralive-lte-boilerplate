@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="text-right">
-                                    <button type="submit" class="btn btn-primary">Save</button>
+                                    <button type="submit" wire:loading.attr="disabled" wire:target="saveData" class="btn btn-primary">Save <span wire:target="saveData"  wire:loading wire:target="saveData"><i class="fa-solid fa-circle-notch fa-spin"></i></span></button>
                                 </div>
                             </form>
                         </div>

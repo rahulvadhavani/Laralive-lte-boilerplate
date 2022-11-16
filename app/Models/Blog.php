@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\File;
 
 class Blog extends Model
 {
@@ -16,9 +17,13 @@ class Blog extends Model
     //     $this->attributes['title']= $name;
     //     $this->attributes['slug'] = \Str::slug($this->name , "-");
     // }
+
     public function getImageThumbnailAttribute($value){
-        return app()->environment('local') ? url('uploads/'.$value) : url('public/uploads/'.$value);
-        // return url('public/uploads/'.$value);
+        if (!$value || !File::exists(public_path('uploads/'.$value))) {
+            return url('/dist/img/boxed-bg.jpg');
+        }else{
+            return url('uploads/'.$value);
+        }
     }
     
     public function getCreatedAtAttribute($value) {

@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Scope;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\File;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -53,7 +54,7 @@ class User extends Authenticatable
     ];
 
     public function getImageAttribute(){
-        if (!$this->attributes['image']) {
+        if (!$this->attributes['image'] || !File::exists(public_path('uploads/'.$this->attributes['image']))) {
             return url('dist/img/avatar.png');
         }
         return  url('uploads/'.$this->attributes['image']);

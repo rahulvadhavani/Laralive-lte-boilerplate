@@ -26,7 +26,7 @@ return [
             'active-route' => 'admin/static-page/*',
             'iconClass' => 'fa-solid fa-paperclip',
             'pages' => [
-                'Aboutus' => [
+                'About-Us' => [
                     'route' => 'static-page',
                     'iconClass' => 'fa fa-file-contract',
                     'param' => ['slug' => 'about-us'],

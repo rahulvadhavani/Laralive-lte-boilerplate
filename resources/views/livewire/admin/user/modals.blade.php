@@ -73,7 +73,7 @@
       </div>
       <div class="modal-footer card-header">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary">@if($recordId == 0) Submit @else Update @endif</button>
+        <button type="submit" wire:loading.attr="disabled" wire:target="submit" class="btn btn-primary">@if($recordId == 0) Submit @else Update @endif <span  wire:loading wire:target="submit"><i class="fa-solid fa-circle-notch fa-spin"></i></span></button>
       </div>
       </form>
     </div>
