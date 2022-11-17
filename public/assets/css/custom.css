@@ -88,3 +88,9 @@ button:focus {
 .error {
     color: red;
 }
+
+
+.table-responsive .badge-info {
+    color: #fff;
+    background-color: #6610f2;
+}

@@ -97,7 +97,10 @@ class Table extends DataTableComponent
 
     public function query(): Builder
     {
-        return Category::select('id', 'name', 'alias', 'created_at', 'status')->latest();
+        return Category::select('id', 'name', 'alias', 'created_at', 'status')
+        ->when(empty($this->sorts),function($query){
+            $query->latest();
+        });
     }
 
     public function refresh()

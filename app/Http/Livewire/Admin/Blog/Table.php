@@ -106,8 +106,10 @@ class Table extends DataTableComponent
                 $query->select('id', 'first_name', 'last_name');
             },
         ])
-            ->select('*')
-            ->latest();
+        ->select('*')
+        ->when(empty($this->sorts),function($query){
+            $query->latest();
+        });
     }
 
     public function refresh()

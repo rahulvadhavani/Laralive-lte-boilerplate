@@ -101,7 +101,11 @@ class Table extends DataTableComponent
 
     public function query(): Builder
     {
-        return User::UserRole()->select('id', 'first_name', 'last_name', 'email', 'image', 'created_at', 'status')->latest();
+        return User::UserRole()
+        ->select('id', 'first_name', 'last_name', 'email', 'image', 'created_at', 'status')
+        ->when(empty($this->sorts),function($query){
+            $query->latest();
+        });
     }
 
     public function refresh()
