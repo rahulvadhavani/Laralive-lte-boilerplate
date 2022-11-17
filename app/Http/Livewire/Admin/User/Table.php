@@ -67,12 +67,12 @@ class Table extends DataTableComponent
 
     public function deleteRecrod($id)
     {
-        $category = User::where('id', $id)->first();
-        if ($category == null) {
+        $model = User::where('id', $id)->first();
+        if ($model == null) {
             $res = error("{$this->curPage} not found.");
         } else {
             $res = success("{$this->curPage} deleted successfully.");
-            $category->delete();
+            $model->delete();
         }
         $this->dispatchBrowserEvent('alert', $res);
     }
@@ -101,9 +101,13 @@ class Table extends DataTableComponent
 
     public function query(): Builder
     {
-        return User::UserRole()->select('id', 'first_name', 'last_name', 'email', 'image', 'created_at', 'status')->latest();
+        return User::UserRole()
+        ->select('id', 'first_name', 'last_name', 'email', 'image', 'created_at', 'status')
+        ->when(empty($this->sorts),function($query){
+            $query->latest();
+        });
     }
-
+    
     public function refresh()
     {
         $this->emit('refreshDatatable');
