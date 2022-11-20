@@ -20,7 +20,7 @@ $("#sidebar_controller .custom-control-input").on('click', function () {
         $(`${target}`).toggleClass(`${targetClassName}`);
     }
     else{
-        targetClassName = targetClass;
+        targetClassName = this.checked ? targetClass : "";
         $(`${target}`).toggleClass(`${targetClass}`);
     }
     if(this.checked){
