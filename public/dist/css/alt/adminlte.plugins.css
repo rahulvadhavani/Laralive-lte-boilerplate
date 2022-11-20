@@ -2197,7 +2197,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .dark-mode .select2-primary .select2-results__option--highlighted,
 .dark-mode .select2-primary .select2-container--default .select2-results__option--highlighted {
-  background-color: #3f6791;
+  background-color: #6610f2;
   color: #fff;
 }
 
@@ -2215,7 +2215,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .dark-mode .select2-primary .select2-selection--multiple .select2-selection__choice,
 .dark-mode .select2-primary .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #3f6791;
+  background-color: #6610f2;
   border-color: #375a7f;
   color: #fff;
 }
@@ -2995,7 +2995,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .dark-mode .select2-blue .select2-results__option--highlighted,
 .dark-mode .select2-blue .select2-container--default .select2-results__option--highlighted {
-  background-color: #3f6791;
+  background-color: #6610f2;
   color: #fff;
 }
 
@@ -3013,7 +3013,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .dark-mode .select2-blue .select2-selection--multiple .select2-selection__choice,
 .dark-mode .select2-blue .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #3f6791;
+  background-color: #6610f2;
   border-color: #375a7f;
   color: #fff;
 }
@@ -3843,7 +3843,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .dark-mode .slider-primary .slider .slider-selection {
-  background: #3f6791;
+  background: #6610f2;
 }
 
 .dark-mode .slider-secondary .slider .slider-selection {
@@ -3899,7 +3899,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .dark-mode .slider-blue .slider .slider-selection {
-  background: #3f6791;
+  background: #6610f2;
 }
 
 .dark-mode .slider-indigo .slider .slider-selection {
@@ -4389,18 +4389,18 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .dark-mode .icheck-primary > input:first-child:not(:checked):not(:disabled):hover + label::before,
 .dark-mode .icheck-primary > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
-  border-color: #3f6791;
+  border-color: #6610f2;
 }
 
 .dark-mode .icheck-primary > input:first-child:not(:checked):not(:disabled):focus + label::before,
 .dark-mode .icheck-primary > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
-  border-color: #3f6791;
+  border-color: #6610f2;
 }
 
 .dark-mode .icheck-primary > input:first-child:checked + label::before,
 .dark-mode .icheck-primary > input:first-child:checked + input[type="hidden"] + label::before {
-  background-color: #3f6791;
-  border-color: #3f6791;
+  background-color: #6610f2;
+  border-color: #6610f2;
 }
 
 .dark-mode .icheck-secondary > input:first-child:not(:checked):not(:disabled):hover + label::before,
@@ -4613,18 +4613,18 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .dark-mode .icheck-blue > input:first-child:not(:checked):not(:disabled):hover + label::before,
 .dark-mode .icheck-blue > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
-  border-color: #3f6791;
+  border-color: #6610f2;
 }
 
 .dark-mode .icheck-blue > input:first-child:not(:checked):not(:disabled):focus + label::before,
 .dark-mode .icheck-blue > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
-  border-color: #3f6791;
+  border-color: #6610f2;
 }
 
 .dark-mode .icheck-blue > input:first-child:checked + label::before,
 .dark-mode .icheck-blue > input:first-child:checked + input[type="hidden"] + label::before {
-  background-color: #3f6791;
-  border-color: #3f6791;
+  background-color: #6610f2;
+  border-color: #6610f2;
 }
 
 .dark-mode .icheck-indigo > input:first-child:not(:checked):not(:disabled):hover + label::before,
@@ -8858,7 +8858,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .dark-mode .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
 .dark-mode .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
-  background: #3f6791;
+  background: #6610f2;
   color: #fff;
 }
 
@@ -8942,7 +8942,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .dark-mode .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-blue,
 .dark-mode .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-blue {
-  background: #3f6791;
+  background: #6610f2;
   color: #fff;
 }
 

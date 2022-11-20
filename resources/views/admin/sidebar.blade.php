@@ -1,7 +1,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="{{url('/')}}" class="brand-link">
-        <img src="{{asset('dist/img/AdminLTELogo.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <a href="{{route('dashboard')}}" class="brand-link">
+        <img src="{{getSettings('logo_image')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">{{config('app.name')}}</span>
     </a>
 
@@ -29,7 +29,7 @@
         </div>
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-            <ul class="nav nav-pills nav-sidebar flex-column nav-child-indent" data-widget="treeview" role="menu" data-accordion="false">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 @foreach ($navItems as $key => $val)
                 @if($key != "Static Pages")
                 <li class="nav-item">
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 @else
-                <li class="nav-item menu-is-opening">
+                <li class="nav-item">
                     <a href="#" class="nav-link {{ request()->is($val['active-route']) ? 'active' : '' }}">
                         <i class="nav-icon {{$val['iconClass']}}"></i>
                         <p>

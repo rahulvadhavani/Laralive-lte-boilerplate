@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Models\Setting;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
@@ -93,6 +94,10 @@ class Profile extends Component
                 Setting::updateOrCreate(['key' => $key], ['key' => $key, 'value' => $value]);
             }
         }
+        Cache::forget('app_setting');
+        Cache::rememberForever('app_setting', function () {
+            return collect(Setting::get());
+        });
         $res = success('Settings Updated successfully.');
         $this->dispatchBrowserEvent('alert', $res);
     }

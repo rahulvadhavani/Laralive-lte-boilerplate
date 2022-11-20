@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Setting;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\File;
 
 if(!function_exists('success')){
@@ -43,16 +44,19 @@ if(!function_exists('imageUploader')){
 if(!function_exists('getSettings')){
     function getSettings($key ="")
     {
-        $value = "";
-        if($key == ""){
-            return $value;
+        if (Cache::has('app_setting')) {
+            $setting = Cache::get('app_setting');
+        }else{
+            $setting = Cache::rememberForever('app_setting', function () {
+                return collect(Setting::get());
+            });
         }
-        $Settings =  Setting::where('key',$key)->first();
-        $value = $Settings->value;
-        if($key == 'logo_image'){
-            $value = asset('uploads/'.$Settings->value);
+        if($key != ""){
+            $setting = $setting->where('key',$key)->first()->value ?? "";
+            if($key == 'logo_image'){
+                $setting = $setting != "" ? asset('uploads/' . $setting) : asset('assets/images/logo.png');
+            }
         }
-        return $value;
+        return $setting;
     }
 }
-?>
