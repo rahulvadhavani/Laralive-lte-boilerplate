@@ -52,7 +52,7 @@ button:focus {
 
 #profile_img .profile-pic {
     z-index: 10;
-    color: black;
+    color: #6610f2;
     transition: all .3s ease;
     text-decoration: none;
 }
