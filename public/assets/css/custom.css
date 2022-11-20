@@ -94,3 +94,36 @@ button:focus {
     color: #fff;
     background-color: #6610f2;
 }
+
+.dark-mode .swal2-popup {
+    color: #6610f2 !important;
+}
+
+.swal2-title {
+    color: #6610f2 !important;
+}
+
+.table-responsive .btn:not(:disabled):not(.disabled) {
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #ffff;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #acacac;
+    border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #8f8f8f;
+}
