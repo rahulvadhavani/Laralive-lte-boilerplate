@@ -63,4 +63,4 @@ Postman collection Url :  https://www.getpostman.com/collections/52b304b4298a1f7
 
 [Livewire](https://laravel-livewire.com/docs/2.x/quickstart)
 
-[Livewire-datatable ReadMe]([Livewire](https://laravel-livewire.com/docs/2.x/quickstart))
+[Livewire-datatable ReadMe](https://laravel-livewire.com/docs/2.x/quickstart)
