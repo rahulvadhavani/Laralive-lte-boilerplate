@@ -47,4 +47,29 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    public function render($request, Throwable $exception)
+    {
+        if ($request->expectsJson()) {
+            if($exception->getMessage() == 'Unauthenticated.'){
+                return response()->json([
+                    'status'   => false,
+                    'status_code'   => 401,
+                    'message' => 'Unauthenticated user!'
+                ]);
+            } else if ($exception instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException){
+                    return response()->json([
+                    'status'   => false,
+                    'status_code'   => 404,
+                    'message' => 'End point not found!'
+                ]);
+            } else if ($exception instanceof \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException){
+                    return response()->json([
+                    'status'   => false,
+                    'status_code'   => 405,
+                    'message' => 'Method not allowed!'
+                ]);
+            }
+        }
+        return parent::render($request, $exception);
+    }
 }

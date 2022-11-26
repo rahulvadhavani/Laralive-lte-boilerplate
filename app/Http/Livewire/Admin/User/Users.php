@@ -103,11 +103,6 @@ class Users extends Component
                 $this->unlinkImg($oldImg);
             }
         }
-        if (isset($validatedData['password']) && $validatedData['password'] != "") {
-            $validatedData['password'] =  Hash::make($validatedData['password']);
-        } else {
-            unset($validatedData['password']);
-        }
 
         if ($user) {
             $user->update($validatedData);

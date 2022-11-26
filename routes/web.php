@@ -48,8 +48,7 @@ Route::post('ck-image-upload', function(){
     return response()->json(['fileName' => basename($url), 'uploaded'=> 1, 'url' => $url]);
 })->name('ck-image-upload')->middleware('admin')->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
 
-
-// Route::view('/', 'home')->name('home');
+Route::get('verify-email/{id}', [\App\Http\Controllers\Api\v1\AuthController::class,'emailVerification']);
 
 
 

@@ -1,0 +1,1228 @@
+{
+	"info": {
+		"_postman_id": "e8e97877-073b-41d7-ad6b-2cf3c0a45716",
+		"name": "laralive-lte-boilerplate",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23484265"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "signup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "hey",
+									"type": "default"
+								},
+								{
+									"key": "last_name",
+									"value": "rv",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "hey@rv.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "12345678",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/signup",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"signup"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "signup",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "hey",
+											"type": "default"
+										},
+										{
+											"key": "last_name",
+											"value": "rv",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "h@rv.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "default"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/signup",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 10:52:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"Signup successfully, Please verify your email address.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "hey@rv.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/login",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "h@rv.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/signin",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"signin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 10:53:14 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "60"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=99"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"Login successful\",\n    \"token_type\": \"Bearer\",\n    \"expires_in\": 31536000,\n    \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNDVkODU0ZDIxNmUyMjhmYzA5NzVkYjNiODFiZDNjY2I0MWZmMmM0NTdhODVmNWZkNjg1NDVmM2UwZGIxNDBhNWJkODA4MzVmOTFhZmNlZjEiLCJpYXQiOjE2Njk0NTk5OTUuNTAzODgyLCJuYmYiOjE2Njk0NTk5OTUuNTAzODg5LCJleHAiOjE3MDA5OTU5OTUuNDgxOTYyLCJzdWIiOiIxMSIsInNjb3BlcyI6WyIqIl19.mJmLWbKqLdyOIcdS0qLPq00HVJ44LUdtJimLDDrSo0B6B5ehU8f54v9rXa4DDLELKrBMPLpjMXskvFc6HgCMJnMx4p1j7Umj7gGC7rzIUEhW0kIe8nRVOAXYaW1DDQvKk850bisAjuiFpbbNPnCwlRofzZnHFvyCdeNUdEgLdU-Ul9j6nuczriAXFPATRqu85knoYf0biyOEU51G8f0P5goKatJjrcWzk0T4bkaxmAueufTXOc7GhpmhRsXDAFPFcp6ILI5dtFopMPT7UVDLXnj3U4XzsHTU-Pouf8yW9LRs5wbRcwzG5gOEQmDaOD8sAETa-IOgVi2UFoa27FAwVeHWSzBJvOn6K_t1ey02dMscktdNKWTX5C_65bxJFYLKb1_qwmmBwRDEpWBd0yIVbZqkvlzHLcFjVl0pXoQ_6FhS3Wjdjibn-zZvit0KSTSASjPEzqLiBVgz442-EskEmkJJnN3ZIGVmMo3mY8QHQl9KJHMsaLPGuJskGPhiQ_XTsc6McYmsME16i3ez5uxfkryp72ZoMOFqMaXcB9Z9f7Ue2ZwaEdDMMp7cR2n21AKTwhNiaexqbIyENp1pzz7BOKK87dG6newu-GjHDL0JZyQttXTXUJcB_8KrnTIHRyaokK91dWTDygwp6kJxA1hWyHMHSpkn4bqonJAfXLbdil8\",\n    \"refresh_token\": \"def50200164c617e23f3be53fc8e8465650b049dde0c010154cd732d08c9f4f5e2afebb92fa2fc9bef60af6d6b92e55a80b14d20db0792a79fbd24e5e1875b4887ef2980fff705400792186548b9ef88f8e183e41f1e7f36c4ce324a45c5781f6dc1bb96291caaec1d65de106996658869f861615fe1569930caa561a12d9680eac88e2875de76b5722fab703343b56d2226907997130f7f6844b08e6e1bf90ac72fd6ad50114f720806c931b6b8ff77a945f568141aaf4b10cd537a9fdca1b279c20d9c18cc42053f132755ecb2f5e5bcfbd93f2fb26b5c96b46347264ea1c23975844007277a421be246495572725431688e629d1fd2edcc3f8fddcef4b16431a719d1794ab8727322392f477fb8b67a8cfe8ed8219f61d6df8e7e34faa7be6f1312b9da4536ec21d1f733bee986b43cc344bcfbadc654b0401e3b61a087e33c7e2dba79a930b234eb31ef90c825855be0fc71f8eba6be003abe55b199dd850281b2e4fc\",\n    \"data\": {\n        \"id\": 11,\n        \"first_name\": \"hey\",\n        \"last_name\": \"rv\",\n        \"email\": \"h@rv.com\",\n        \"image\": \"http://localhost/projects/Laralive-lte-boilerplate/public/dist/img/avatar.png\",\n        \"email_verified_at\": \"2022-11-26T10:53:04.000000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "h@rv.com",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/forgot-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"forgot-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Forgot-password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "h@rv.com",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/forgot-password",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"forgot-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 11:23:45 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"Forgot password OTP sent on your email.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "h@rv.com",
+									"type": "default"
+								},
+								{
+									"key": "otp",
+									"value": "988082",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/reset-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Reset-password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "h@rv.com",
+											"type": "default"
+										},
+										{
+											"key": "otp",
+											"value": "988082",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "default"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "123456789",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/reset-password",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"reset-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 11:25:33 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "56"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"Passowrd reset successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "verify-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "h@rv.com",
+									"type": "text"
+								},
+								{
+									"key": "otp",
+									"value": "988082",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/verify-otp",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"verify-otp"
+							]
+						},
+						"description": "pre-verify otp"
+					},
+					"response": [
+						{
+							"name": "verify-otp",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "h@rv.com",
+											"type": "text"
+										},
+										{
+											"key": "otp",
+											"value": "784656",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/verify-otp",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"verify-otp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 11:31:29 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"OTP verified successfully.\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "get profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIyIiwianRpIjoiNDVkODU0ZDIxNmUyMjhmYzA5NzVkYjNiODFiZDNjY2I0MWZmMmM0NTdhODVmNWZkNjg1NDVmM2UwZGIxNDBhNWJkODA4MzVmOTFhZmNlZjEiLCJpYXQiOjE2Njk0NTk5OTUuNTAzODgyLCJuYmYiOjE2Njk0NTk5OTUuNTAzODg5LCJleHAiOjE3MDA5OTU5OTUuNDgxOTYyLCJzdWIiOiIxMSIsInNjb3BlcyI6WyIqIl19.mJmLWbKqLdyOIcdS0qLPq00HVJ44LUdtJimLDDrSo0B6B5ehU8f54v9rXa4DDLELKrBMPLpjMXskvFc6HgCMJnMx4p1j7Umj7gGC7rzIUEhW0kIe8nRVOAXYaW1DDQvKk850bisAjuiFpbbNPnCwlRofzZnHFvyCdeNUdEgLdU-Ul9j6nuczriAXFPATRqu85knoYf0biyOEU51G8f0P5goKatJjrcWzk0T4bkaxmAueufTXOc7GhpmhRsXDAFPFcp6ILI5dtFopMPT7UVDLXnj3U4XzsHTU-Pouf8yW9LRs5wbRcwzG5gOEQmDaOD8sAETa-IOgVi2UFoa27FAwVeHWSzBJvOn6K_t1ey02dMscktdNKWTX5C_65bxJFYLKb1_qwmmBwRDEpWBd0yIVbZqkvlzHLcFjVl0pXoQ_6FhS3Wjdjibn-zZvit0KSTSASjPEzqLiBVgz442-EskEmkJJnN3ZIGVmMo3mY8QHQl9KJHMsaLPGuJskGPhiQ_XTsc6McYmsME16i3ez5uxfkryp72ZoMOFqMaXcB9Z9f7Ue2ZwaEdDMMp7cR2n21AKTwhNiaexqbIyENp1pzz7BOKK87dG6newu-GjHDL0JZyQttXTXUJcB_8KrnTIHRyaokK91dWTDygwp6kJxA1hWyHMHSpkn4bqonJAfXLbdil8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/profile",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "get profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{local}}/profile",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 11:11:36 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"message\": \"data fetched successfully!\",\n    \"data\": {\n        \"id\": 11,\n        \"first_name\": \"hey\",\n        \"last_name\": \"rv\",\n        \"email\": \"h@rv.com\",\n        \"email_verified_at\": \"2022-11-26 10:53:04\",\n        \"created_at\": \"2022-11-26 10:52:45\",\n        \"status\": \"Active\",\n        \"full_name\": \"hey rv\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "rv",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "mrv",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/rahul/Downloads/avatar.png.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/update-profile",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"update-profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update-profile",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "first_name",
+											"value": "rv",
+											"type": "text"
+										},
+										{
+											"key": "last_name",
+											"value": "mrv",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/rahul/Downloads/avatar.png.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/update-profile",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"update-profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 11:20:30 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"Profile updated successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZWQ2YjgzNWQzZWRlYjE5ZDgxMGZiODQ4NzQzMjUyMWQzYTk4OGNhMDc4MTgxMjcxNDRlMTQyMjgzMmI4MzBhMDllZmIyNGVhMTMxNTc5N2YiLCJpYXQiOjE2NjM3Nzk0NjcuMDc0MTYyLCJuYmYiOjE2NjM3Nzk0NjcuMDc0MTY4LCJleHAiOjE2OTUzMTU0NjcuMDYyMjQ0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.AKpiJX92KgpPO0sKOyHE0yrwUceSYgRO3VyhRl8oN153hEp4AylIkI5OiZ7BBK_8YwpXwLo5XlndW-39-8Kune7hwNKOorENLZKI28DsxBxPwe0eFJqJ3N-9ckCAFYkHpm9BseV6P0Naw5dLBzoSWBIv2eDS1q_qxggpkTK3ccKsJnZgVacOjj52W5rSeggQINHkOSs_vNv7jPCX8eGn2-XWSRL1vfssEaZXr6I10cwyKyawk9KZ6smMMHOnctN61BJDulYUNanxoLYhORMNZ-QUwCkAJBLXy5V7FwrXBavnpro7Cs1VmMTHjH2IWjb_SYQuJlaChDBdZlMH1C8z5erogDhCosc-PTLKEYEogYZ_GX57hoM_5ucjK5WVXjueHlxkuuQKnbEmqPx7FVza8ViCnlNPTAMHpDgzoN132pgVZ0V6BjbxS7iCl5ePwrEDL8gav-TbGdSbbFqaGb31rrhoim061w4Xjv6r59Vv-CukFFd-VrvRWGSogSYBvwNNfvG9tfK-HSZoDj-bmhNFJbYXy6tyIUXUR-LtjG7vCyOhQrSUr-zUuWOOhvFviTXVkbaqf4fMrzI7kWbJBCEKQj9ZqvLqF-bRJvS-MT2FRHxs48vogmmDJPpqp9iz34YdC3inl6PdE6wQKnB4fI-TbYd0ykzcWhenRPMA2eiuGCg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "old_password",
+									"value": "12345678",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456789",
+									"type": "default"
+								},
+								{
+									"key": "password_confirmation",
+									"value": "123456789",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{local}}/change-password",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"change-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Change-password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "default"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "old_password",
+											"value": "123456789",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "12345678",
+											"type": "default"
+										},
+										{
+											"key": "password_confirmation",
+											"value": "12345678",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{local}}/change-password",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"change-password"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 11:27:28 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "57"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"Password updated successfully.\"\n}"
+						}
+					]
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}/logout",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{local}}/logout",
+									"host": [
+										"{{local}}"
+									],
+									"path": [
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Sat, 26 Nov 2022 11:34:42 GMT"
+								},
+								{
+									"key": "Server",
+									"value": "Apache/2.4.52 (Win64) OpenSSL/1.1.1m PHP/8.1.1"
+								},
+								{
+									"key": "Vary",
+									"value": "Authorization"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.1"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5, max=100"
+								},
+								{
+									"key": "Connection",
+									"value": "Keep-Alive"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": true,\n    \"status_code\": 200,\n    \"message\": \"Successfully logout\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost/projects/Laralive-lte-boilerplate/public/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
