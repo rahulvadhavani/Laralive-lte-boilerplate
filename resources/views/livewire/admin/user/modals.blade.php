@@ -90,32 +90,32 @@
         </button>
       </div>
       <div class="modal-body">
-        @if(isset($modalData) && $modalData != null)
+        @if(isset($recordId) && $recordId > 0)
         <div class="card-body" id="modal_body_part">
           <div class="row">
             <div class="col-12">
               <div class="card card-primary card-outline">
                 <div class="card-body box-profile">
                   <div class="text-center">
-                    <img id="info_image" class="profile-user-img img-fluid img-circle" src="{{$modalData->image}}" alt="User profile picture">
+                    <img id="info_image" class="profile-user-img img-fluid img-circle" src="{{$myimage}}" alt="User profile picture">
                   </div>
-                  <h3 class="profile-username text-center" id="info_name">{{$modalData->email}}</h3>
+                  <h3 class="profile-username text-center" id="info_name">{{$email}}</h3>
                   <div class="row">
                     <div class="col-md-6">
                       <label class="col-form-label"><b>First Name</b></label><br>
-                      <p>{{$modalData->first_name}}</p>
+                      <p>{{$first_name}}</p>
                     </div>
                     <div class="col-md-6">
                       <label class="col-form-label"><b>Last Name</b></label><br>
-                      <p>{{$modalData->last_name}}</p>
+                      <p>{{$last_name}}</p>
                     </div>
                     <div class="col-md-6">
                       <label class="col-form-label"><b>Email</b></label><br>
-                      <p>{{$modalData->email}}</p>
+                      <p>{{$email}}</p>
                     </div>
                     <div class="col-md-6">
                       <label class="col-form-label"><b>Created at</b></label><br>
-                      <p>{{$modalData->created_at}}</p>
+                      <p>{{$created_at}}</p>
                     </div>
                   </div>
                 </div>
