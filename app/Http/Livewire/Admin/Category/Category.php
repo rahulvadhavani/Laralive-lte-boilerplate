@@ -8,7 +8,7 @@ use Livewire\Component;
 class Category extends Component
 {
     public $page = 'Category';
-    public $name, $modalData, $modalStatus, $categories;
+    public $name,$modalStatus, $categories,$created_at,$alias;
     public $curPage = 'Category';
     public $recordId = 0;
     public function render()
@@ -50,7 +50,10 @@ class Category extends Component
     public function view($id)
     {
         $category = CategoryModel::where('id', $id)->select('id', 'name', 'alias', 'status', 'created_at')->first();
-        $this->modalData = $category;
+        $this->recordId = $id;
+        $this->name = $category->name;
+        $this->alias = $category->alias;
+        $this->created_at = $category->created_at;
         $this->modalStatus = $category->status;
         $this->dispatchBrowserEvent('viewModal');
     }

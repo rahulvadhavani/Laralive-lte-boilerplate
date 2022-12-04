@@ -41,23 +41,23 @@
       </div>
       <div class="modal-body">
         <div class="row clearfix">
-          @if(isset($modalData) && $modalData != null)
+          @if(isset($recordId) && $recordId > 0)
           <div class="col-md-12 col-sm-12">
             <div class="form-group">
               <b>Name </b> :
-              <label id="detail_name">{{$modalData->name}}</label>
+              <label id="detail_name">{{$name}}</label>
             </div>
             <div class="form-group">
               <b>Alias </b> :
-              <label id="detail_name">{{$modalData->alias}}</label>
+              <label id="detail_name">{{$alias}}</label>
             </div>
             <div class="form-group">
               <b>Created at </b> :
-              <label id="detail_name">{{$modalData->created_at}}</label>
+              <label id="detail_name">{{$created_at}}</label>
             </div>
             <div class="form-group">
               <b>Status </b> :
-              <label id="detail_name">@if($modalData->status == 1 ) <span class="badge badge-success">Active</span> @else <span class="badge badge-danger">Inactive</span> @endif</label>
+              <label id="detail_name">@if($modalStatus == 1 ) <span class="badge badge-success">Active</span> @else <span class="badge badge-danger">Inactive</span> @endif</label>
             </div>
           </div>
           @endif

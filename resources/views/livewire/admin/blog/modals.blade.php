@@ -116,7 +116,9 @@
       </div>
       <div class="modal-body">
         <!--  -->
-        @if(isset($modalData) && $modalData != null)
+  
+        <!--  -->
+        @if(isset($recordId) && $recordId > 0)
         <div class="container-fluid">
           <div class="row clearfix">
             <div class="col-lg-4 col-md-12">
@@ -126,7 +128,7 @@
                   <h3 class="card-title">{{$curPage}} Image</h3>
                 </div>
                 <div class="card-body">
-                  <img class="rounded w-100" src="{{$modalData->image_thumbnail ?? ''}}" alt="">
+                  <img class="rounded w-100" src="{{$image ?? ''}}" alt="">
                 </div>
               </div>
               @endif
@@ -138,35 +140,35 @@
                   <ul class="list-group">
                     <li class="list-group-item">
                       <small class="text-muted">Title: </small>
-                      <p class="mb-0">{{$modalData->title ?? '-'}}</p>
+                      <p class="mb-0">{{$title ?? '-'}}</p>
                     </li>
                     <li class="list-group-item">
                       <small class="text-muted">Slug: </small>
-                      <p class="mb-0">{{$modalData->slug ?? '-'}}</p>
+                      <p class="mb-0">{{$slug ?? '-'}}</p>
                     </li>
                     <li class="list-group-item">
                       <small class="text-muted">Subtitle: </small>
-                      <p class="mb-0">{{$modalData->subtitle ?? '-'}}</p>
+                      <p class="mb-0">{{$subtitle ?? '-'}}</p>
                     </li>
                     <li class="list-group-item">
                       <small class="text-muted">Seo title: </small>
-                      <p class="mb-0">{{$modalData->blogcontent->seo_title ?? '-'}}</p>
+                      <p class="mb-0">{{$seo_title ?? '-'}}</p>
                     </li>
                     <li class="list-group-item">
                       <small class="text-muted">Category: </small>
-                      <p class="mb-0">{{$modalData->category->name ?? '-'}}</p>
+                      <p class="mb-0">{{$category_name ?? '-'}}</p>
                     </li>
                     <li class="list-group-item">
                       <small class="text-muted">Meta description: </small>
-                      <p class="mb-0">{{$modalData->blogcontent->meta_description ?? '-'}}</p>
+                      <p class="mb-0">{{$meta_description ?? '-'}}</p>
                     </li>
                     <li class="list-group-item">
                       <small class="text-muted">Created By: </small>
-                      <p class="mb-0">{{$modalData->user->fullname ?? '-'}}</p>
+                      <p class="mb-0">{{$blog_user ?? '-'}}</p>
                     </li>
                     <li class="list-group-item">
                       <small class="text-muted">Created On: </small>
-                      <p class="mb-0">{{$modalData->created_at ?? '-'}}</p>
+                      <p class="mb-0">{{$created_at ?? '-'}}</p>
                     </li>
                   </ul>
                 </div>
@@ -176,7 +178,7 @@
                   <h3 class="card-title">Tags</h3>
                 </div>
                 <div class="card-body">
-                  @forelse($modalData->blogcontent->tags as $tag)
+                  @forelse($tagsArr as $tag)
                   <div class="chip mt-2">
                     <i class="fa fa-hashtag"></i>{{$tag}}
                   </div>
@@ -192,7 +194,7 @@
                   <h3 class="card-title">Blog Content</h3>
                 </div>
                 <div class="card-body" style="max-height: 800px; overflow:scroll">
-                  {!!$modalData->blogcontent->blog_body!!}
+                  {!!$blog_body!!}
                 </div>
               </div>
             </div>

@@ -12,7 +12,7 @@ class Users extends Component
 
     use WithFileUploads;
     public $page = 'Users';
-    public $first_name, $last_name, $image, $email, $modalData, $modalStatus, $password, $password_confirmation, $myimage;
+    public $first_name, $last_name, $image, $email, $modalStatus, $password, $password_confirmation, $myimage;
     public $curPage = 'User';
     public $recordId = 0;
     public function render()
@@ -61,8 +61,13 @@ class Users extends Component
             $this->dispatchBrowserEvent('alert', error('Record not found.'));
             return;
         }
-        $this->modalData = $model;
         $this->modalStatus = $model->status;
+        $this->recordId = $id;
+        $this->first_name = $model->first_name;
+        $this->last_name = $model->last_name;
+        $this->email = $model->email;
+        $this->created_at = $model->created_at;
+        $this->myimage = $model->image;
         $this->dispatchBrowserEvent('viewModal');
     }
 
@@ -87,7 +92,7 @@ class Users extends Component
     {
         $this->recordId = 0;
         $this->name = '';
-        $this->reset(['first_name', 'last_name', 'image', 'email', 'modalData', 'modalStatus']);
+        $this->reset(['first_name', 'last_name', 'image', 'email', 'modalStatus']);
         $this->dispatchBrowserEvent('addUpdateModal');
     }
 

@@ -81,8 +81,21 @@ class Blogs extends Component
             $this->dispatchBrowserEvent('alert', error('Blog not found'));
             return;
         }
-        $this->modalData = $blog;
+        $this->recordId = $id;
+        $this->title = $blog->title;
+        $this->slug = $blog->slug;
+        $this->category_id = $blog->category_id;
+        $this->subtitle = $blog->subtitle;
+        $this->image = $blog->image_thumbnail;
+        $this->seo_title = $blog->blogcontent->seo_title;
+        $this->meta_description = $blog->blogcontent->meta_description;
+        $this->tagsArr = $blog->blogcontent->tags;
+        $this->tags = implode(',', $blog->blogcontent->tags);
+        $this->blog_body = $blog->blogcontent->blog_body;
         $this->modalStatus = $blog->status;
+        $this->created_at = $blog->created_at;
+        $this->blog_user = $blog->user->first_name .' '.$blog->user->last_name;
+        $this->category_name = $blog->category->name;
         $this->dispatchBrowserEvent('viewModal');
     }
 
@@ -131,9 +144,9 @@ class Blogs extends Component
             }else{
                 unset($param->image_thumbnail);
             }
-            $blogContent['blog_id'] = $blog->id;
+            $blogContent['tags'] = json_encode(explode(',',$blogContent['tags']));
+            $blog->blogContent()->update($blogContent);
             $blog->update((array) $param);
-            $blog->blogContent->create($blogContent);
         } else {
             if ($param->image_thumbnail != null) {
                 $param->image_thumbnail = $this->image_thumbnail->store('blogs/image_thumbnail', 'userPublic');
