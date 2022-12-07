@@ -1,4 +1,4 @@
-<aside class="control-sidebar control-sidebar-dark" style="top: 56.9682px; height: 449.032px; display: block;">
+<aside class="control-sidebar control-sidebar-dark h-100" style="top: 56.9682px; display: block;">
     <!-- Control sidebar content goes here -->
     <div class="p-3 control-sidebar-content os-host os-theme-light os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition os-host-overflow os-host-overflow-y" style="height: 449.032px;">
         <div class="os-resize-observer-host observed">
@@ -22,14 +22,14 @@
                     </div>
                     <hr class="mb-2">
                     <h6>Header Options</h6>
-                    <div class="mb-1">
+                    <!-- <div class="mb-1">
                         <div class="form-group">
                             <div class="custom-control custom-switch">
                                 <input type="checkbox" class="custom-control-input" checked data-target="body" id="layout-navbar-fixed">
                                 <label class="custom-control-label" for="layout-navbar-fixed">Fixed</label>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="mb-1">
                         <div class="form-group">
                             <div class="custom-control custom-switch">

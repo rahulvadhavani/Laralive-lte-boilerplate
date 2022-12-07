@@ -5,3 +5,5 @@
 <link rel="stylesheet" href="{{asset('plugins/sweetalert2/sweetalert2.min.css')}}" />
 <livewire:styles>
 @stack('css')
+<!-- jQuery -->
+<script src="{{asset('plugins/jquery/jquery.min.js')}}"></script>
