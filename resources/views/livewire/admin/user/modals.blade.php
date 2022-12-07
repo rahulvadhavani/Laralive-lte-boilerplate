@@ -85,8 +85,10 @@
     <div class="modal-content card" wire:ignore.self class="modal fade">
       <div class="modal-header card-header">
         <h5 class="modal-title card-title" id="pageModalLabel">{{$curPage}}</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type="button" class="close">
+          <button type="button" wire:click="$emitTo('admin.user.table', 'delete',{{$recordId}})" class="btn btn-light btn-circle mr-1" data-dismiss="modal"><i class="far fa-trash-alt"></i></button>
+          <button type="button" wire:click="$emitTo('admin.user.users', 'edit',{{$recordId}})" class="btn btn-light btn-circle mr-1" data-dismiss="modal"><i class="far fa-edit"></i></button>
+          <span aria-hidden="true" data-dismiss="modal" aria-label="Close" class="btn btn-light btn-circle mr-1"><i class="fa-solid fa-xmark"></i></span>
         </button>
       </div>
       <div class="modal-body">
@@ -125,26 +127,10 @@
         </div>
         @endif
       </div>
-      <div class="modal-footer card-header">
+      <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
 </div>
 <button type="button" class="btn btn-primary AddModalBtn" wire:click="viewAddModal()"><i class="fa fa-plus fa2"></i></button>
-@push('css')
-<style>
-  .preview_image {
-    height: 70px;
-  }
-</style>
-@endpush
-@push('script')
-<script>
-  window.addEventListener('addUpdateModal', event => {
-    let recordId = @this.get('recordId');
-    $('#preview_image').attr('src', "").hide();
-    $("#pageModal").modal('show');
-  })
-</script>
-@endpush

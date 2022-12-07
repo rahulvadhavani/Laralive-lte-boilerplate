@@ -13,7 +13,7 @@ class Table extends DataTableComponent
     public $curPage = 'User';
     public $recordId = 0;
     public bool $responsive = true;
-    protected $listeners = ['deleteRecrod', 'refresh'];
+    protected $listeners = ['deleteRecrod', 'refresh','delete'];
     public array $bulkActions = [
         'deleteSelected' => 'Delete',
     ];

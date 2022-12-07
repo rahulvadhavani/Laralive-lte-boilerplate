@@ -46,10 +46,14 @@ window.addEventListener('viewDelete', event => {
     })
 });
 
+//common js for close modal
 window.addEventListener('close-modal', event => {
     $("#pageModal").modal('hide');
 })
+
+//common js for open modal
 window.addEventListener('addUpdateModal', event => {
+    $('#preview_image').attr('src', "").hide();
     $("#pageModal").modal('show');
 })
 

@@ -103,7 +103,7 @@ button:focus {
     color: #6610f2 !important;
 }
 
-.table-responsive .btn:not(:disabled):not(.disabled) {
+.dark-mode .table-responsive .btn:not(:disabled):not(.disabled) {
     color: white;
 }
 
@@ -126,4 +126,17 @@ button:focus {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
     background: #8f8f8f;
+}
+
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+.preview_image {
+    height: 70px;
 }

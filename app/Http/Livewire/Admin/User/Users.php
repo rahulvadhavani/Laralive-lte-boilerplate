@@ -116,6 +116,7 @@ class Users extends Component
             User::create($validatedData);
             $res = success("{$this->curPage} User added successfully.");
         }
+        $this->reset(['first_name', 'last_name', 'image', 'email','password' ,'password_confirmation']);
         $this->dispatchBrowserEvent('close-modal');
         $this->refreshData();
         $this->recordId = 0;
