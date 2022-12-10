@@ -15,7 +15,7 @@
                                     <div class="form-group row">
                                         <div class="w-100" wire:ignore>
                                             <div class="form-group mt-3" wire:ignore>
-                                                <label><b>Content :</b><span class="text-danger">*</span></label>
+                                                <label><b>Content </b><span class="text-danger">*</span></label>
                                                 <textarea wire:ignore.self wire:model.lazy="content_data" class="form-contro" id="content_data">{{$content_data}}</textarea>
                                             </div>
                                         </div>
