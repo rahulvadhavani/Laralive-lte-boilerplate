@@ -60,10 +60,10 @@ class UserController extends Controller
                 return error('User not found.');
             }
             if (isset($validData['image']) && $validData['image'] != '') {
-                $validData['image'] = $request->image->store('users', ['disk' => 'userPublic']);
+                $validData['image'] = imageUploader($request->image,'uploads/users');
                 $oldImg = $user->getRawOriginal('image');
-                if (File::exists(public_path('uploads/users/' . $oldImg))) {
-                    File::delete(public_path('uploads/users/' . $oldImg));
+                if (File::exists(public_path($oldImg))) {
+                    File::delete(public_path($oldImg));
                 }
             }
             $user->update($validData);

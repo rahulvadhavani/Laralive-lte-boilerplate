@@ -144,9 +144,9 @@
                                     </div>
                                     <div class="col-md-6 pt-2">
                                        @if ($logo_image)
-                                       <img class="preview_image w-25 ml-2" id="preview_image" src="{{ $logo_image->temporaryUrl() }}">
+                                       <img class="preview_image ml-2" id="preview_image" src="{{ $logo_image->temporaryUrl() }}">
                                        @elseif($logo_image_url != '')
-                                       <img class="preview_image w-25 ml-2" src="{{ $logo_image_url }}">
+                                       <img class="preview_image ml-2" src="{{ $logo_image_url }}">
                                        @endif
                                     </div>
                                  </div>

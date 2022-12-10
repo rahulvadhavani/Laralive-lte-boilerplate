@@ -102,10 +102,10 @@ class Users extends Component
         $user = User::UserRole()->where('id', $validatedData['recordId'])->first();
         unset($validatedData['password_confirmation']);
         if ($this->image != '') {
-            $validatedData['image'] = $this->image->store('users', ['disk' => 'userPublic']);
+            $validatedData['image'] = imageUploader($this->image,'uploads/users');
             if ($user) {
                 $oldImg = $user->getRawOriginal('image');
-                $this->unlinkImg($oldImg);
+                unlinkFile($oldImg);
             }
         }
 

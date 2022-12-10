@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\Admin\{Profile,Dashboard,StaticPage};
 use App\Http\Livewire\Admin\User\Users;
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Artisan;
 
 /*
@@ -40,13 +41,8 @@ Route::group(['prefix' => 'admin','middleware' => ['auth','admin']],function(){
         Artisan::call('key:generate');
         return "Cache is cleared";
     });
+    Route::post('ck-image-upload', [HomeController::class,'ckImageUpload'])->name('ck-image-upload')->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
 });
-Route::post('ck-image-upload', function(){
-    $path = 'images/ck-images/';
-    $url=  imageUploader(request()->upload,$path,$isUrl = true);
-    $CKEditorFuncNum = request()->input('CKEditorFuncNum');
-    return response()->json(['fileName' => basename($url), 'uploaded'=> 1, 'url' => $url]);
-})->name('ck-image-upload')->middleware('admin')->withoutMiddleware([\App\Http\Middleware\VerifyCsrfToken::class]);
 
 Route::get('verify-email/{id}', [\App\Http\Controllers\Api\v1\AuthController::class,'emailVerification']);
 

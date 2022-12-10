@@ -63,29 +63,38 @@ function validatorError($validate)
     );
 }
 
-function loginAndSignupSuccess($message, $tokenBody, $data = null) {
+function loginAndSignupSuccess($message, $tokenBody, $data = null)
+{
     $response = array_merge([
         'status' => true,
         'status_code' => 200,
         'message' => $message,
-    ],$tokenBody);
+    ], $tokenBody);
 
     if (isset($data)) {
         $response = array_merge($response, [
-            'data' =>$data,
+            'data' => $data,
         ]);
     }
     return response()->json($response);
 }
 
 if (!function_exists('imageUploader')) {
-    function imageUploader($image, $filePath, $isUrl = false)
+    function imageUploader($image, $filePath, $isUrl = false, $storeAs = null)
     {
         $path = public_path($filePath);
         File::isDirectory($path) or File::makeDirectory($path, 0777, true, true);
-        $imageName = basename($path) . '_' . time() . '.' . $image->extension();
-        $image->move($path, $imageName);
-        return $isUrl ? url($filePath, $imageName) : $filePath . $imageName;
+        $imageName = $storeAs === null ? basename($path) . '_' . time() . '.' . $image->extension() : $storeAs;
+        $imageName = $image->storeAs($filePath . '/' . $imageName, '', 'userPublic');
+        return $isUrl ? url($imageName) : $imageName;
+    }
+}
+if (!function_exists('unlinkFile')) {
+    function unlinkFile($path)
+    {
+        if (File::exists(public_path($path))) {
+            File::delete(public_path($path));
+        }
     }
 }
 
@@ -102,7 +111,7 @@ if (!function_exists('getSettings')) {
         if ($key != "") {
             $setting = $setting->where('key', $key)->first()->value ?? "";
             if ($key == 'logo_image') {
-                $setting = $setting != "" ? asset('uploads/' . $setting) : asset('assets/images/logo.png');
+                $setting = ($setting != "" && File::exists(public_path($setting))) ? asset($setting) : asset('assets/images/logo.png');
             }
         }
         return $setting;

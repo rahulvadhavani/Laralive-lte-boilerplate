@@ -140,3 +140,7 @@ button:focus {
 .preview_image {
     height: 70px;
 }
+
+.dark-mode .ck.ck-editor__main>.ck-editor__editable {
+    color: rgb(0, 0, 0);
+}

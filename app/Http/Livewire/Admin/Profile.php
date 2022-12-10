@@ -45,9 +45,9 @@ class Profile extends Component
         $user = \App\Models\User::where('id', auth()->user()->id)->first();
         unset($validatedData['image'], $validatedData['password'], $validatedData['password_confirmation'], $validatedData['old_password']);
         if ($this->image != '') {
-            $validatedData['image'] = $this->image->store('users', ['disk' => 'userPublic']);
+            $validatedData['image'] = imageUploader($this->image,'uploads/users');
             $oldImg = $user->getRawOriginal('image');
-            $this->unlinkImg($oldImg);
+            unlinkFile($oldImg);
         }
         $user->update($validatedData);
         $res = success('Profile Updated successfully.');
@@ -72,8 +72,6 @@ class Profile extends Component
         $this->dispatchBrowserEvent('alert', $res);
     }
 
-    // 
-
     public function saveSetting()
     {
         $validatedData = $this->validate([
@@ -89,7 +87,7 @@ class Profile extends Component
         foreach ($validatedData as $key => $value) {
             if ($value != '') {
                 if ($key == 'logo_image' && !empty($validatedData['logo_image'])) {
-                    $value = $this->logo_image->store('home/logo_image', 'userPublic');
+                    $value =  imageUploader($this->logo_image,'uploads/home',$isUrl = false,$storeAs='logo.'.$this->logo_image->extension());
                 }
                 Setting::updateOrCreate(['key' => $key], ['key' => $key, 'value' => $value]);
             }
@@ -112,15 +110,7 @@ class Profile extends Component
         $this->twitter = $Settings['twitter'] ?? "";
         $this->instagram = $Settings['instagram'] ?? "";
         $this->facebook = $Settings['facebook'] ?? "";
-        $this->logo_image_url = (isset($Settings['logo_image']) && $Settings['logo_image'] != "") ? asset('uploads/' . $Settings['logo_image']) : asset('assets/images/logo.png');
-    }
-    // 
-
-    public function unlinkImg($img)
-    {
-        if (File::exists(public_path('uploads/users/' . $img))) {
-            File::delete(public_path('uploads/users/' . $img));
-        }
+        $this->logo_image_url = (isset($Settings['logo_image']) && $Settings['logo_image'] != "" && File::exists(public_path($Settings['logo_image']))) ? asset($Settings['logo_image']) : asset('dist/img/default-150x150.png');
     }
 
     public function mount()

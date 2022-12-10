@@ -69,10 +69,10 @@ class User extends Authenticatable
 
     public function getImageAttribute()
     {
-        if (!$this->attributes['image'] || !File::exists(public_path('uploads/' . $this->attributes['image']))) {
+        if (!$this->attributes['image'] || !File::exists(public_path($this->attributes['image']))) {
             return url('dist/img/avatar.png');
         }
-        return  url('uploads/' . $this->attributes['image']);
+        return  url($this->attributes['image']);
     }
 
     public function getFullNameAttribute()
