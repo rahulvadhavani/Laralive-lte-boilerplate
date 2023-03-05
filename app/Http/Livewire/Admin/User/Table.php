@@ -6,28 +6,48 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Builder;
 use Rappasoft\LaravelLivewireTables\DataTableComponent;
 use Rappasoft\LaravelLivewireTables\Views\Column;
+use Rappasoft\LaravelLivewireTables\Views\Columns\ImageColumn;
 
 
 class Table extends DataTableComponent
 {
     public $curPage = 'User';
-    public $recordId = 0;
     public bool $responsive = true;
     protected $listeners = ['deleteRecrod', 'refresh','delete'];
     public array $bulkActions = [
         'deleteSelected' => 'Delete',
     ];
-    public bool $singleColumnSorting = true;
+   
+
 
     public function mount()
     {
-        $this->resetAll();
+        $this->resetPage();
+        $this->clearSorts();
+    }
+
+    public function configure(): void
+    {
+        $this->setPrimaryKey('id');
+        $this->setColumnSelectStatus(false);
+        $this->setSingleSortingStatus(false);
     }
 
 
     public function columns(): array
     {
         return [
+            Column::make('ID','id')
+                ->hideIf(true),
+            ImageColumn::make('Avatar','image')
+            ->location(
+                fn($row) => $row->image
+            )->attributes(fn($row) => [
+                'class' => 'img-circle img-bordered-sm',
+                'alt' => $row->first_name . ' Avatar',
+                'width' => 30,
+                'height' => 30
+            ]),
             Column::make('FirstName')
                 ->sortable()
                 ->searchable(),
@@ -39,9 +59,9 @@ class Table extends DataTableComponent
                 ->searchable(),
             Column::make('Created_at')
                 ->sortable(),
-            Column::make('Status')
+            Column::make('Status','status')
                 ->sortable()
-                ->format(function ($value, $column, $row) {
+                ->format(function ($value, $row) {
                     $statusActive = $value == 1 ? 'checked' : '';
                     $switchId = "customSwitch" . $row->id;
                     return '<div class="custom-control custom-switch">
@@ -49,14 +69,17 @@ class Table extends DataTableComponent
                     <label class="custom-control-label" for="' . $switchId . '"></label>
                     </div>';
                 })
-                ->asHtml(),
-            Column::make('Action')
-                ->format(function ($value, $column, $row) {
-                    $row = (object)['id' => $row->id];
-                    $action = ['show', 'edit', 'delete'];
-                    $component = "admin.user.users";
-                    return view('livewire.admin.common.actions', compact('row', 'action', 'component'));
-                }),
+                ->html(),
+             Column::make('Actions')
+                ->label(
+                    function($row, Column $column){
+                        $row = (object)['id' => $row->id];
+                        $action = ['show', 'edit', 'delete'];
+                        $component = "admin.user.users";
+                        return view('livewire.admin.common.actions', compact('row', 'action', 'component'));
+                    }
+                )
+                ->unclickable(),
         ];
     }
 
@@ -80,8 +103,9 @@ class Table extends DataTableComponent
     public function deleteSelected()
     {
         $res = error('Please select row');
-        if ($this->selectedRowsQuery->count() > 0) {
-            $this->selectedRowsQuery->delete();
+        if ($this->getSelectedCount() > 0) {
+            User::userRole()->whereIn('id', $this->getSelected())->delete();
+            $this->clearSelected();
             $res = success("{$this->curPage} deleted successfully.");
         }
         $this->dispatchBrowserEvent('alert', $res);
@@ -99,10 +123,9 @@ class Table extends DataTableComponent
         $this->dispatchBrowserEvent('alert', $res);
     }
 
-    public function query(): Builder
+    public function builder(): Builder
     {
-        return User::UserRole()
-        ->select('id', 'first_name', 'last_name', 'email', 'image', 'created_at', 'status')
+        return User::select('id','last_name', 'email', 'image', 'created_at', 'status')
         ->when(empty($this->sorts),function($query){
             $query->latest();
         });

@@ -15,7 +15,7 @@ var toast = Swal.mixin({
 });
 
 function toaster(msg, status = true) {
-    let icon = status == 'false' ? 'error' : 'success';
+    let icon = status == false ? 'error' : 'success';
     toast.fire({
         title: msg,
         icon: icon
@@ -27,6 +27,7 @@ window.addEventListener('viewModal', event => {
 });
 
 window.addEventListener('alert', event => {
+    console.log('event===>',event);
     toaster(event.detail.message, event.detail.status);
 });
 

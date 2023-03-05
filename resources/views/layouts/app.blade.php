@@ -63,7 +63,7 @@
         @include('admin.sidebar')
 
         <div class="content-wrapper">
-            <div class="px-5 pt-4">
+            <div class="px-md-3 px-sm-1 pt-md-4 pt-sm-2">
                 {{ $slot }}
             </div>
         </div>

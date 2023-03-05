@@ -12,7 +12,7 @@ class Users extends Component
 
     use WithFileUploads;
     public $page = 'Users';
-    public $first_name,$created_at, $last_name, $image, $email, $modalStatus, $password, $password_confirmation, $myimage;
+    public $first_name,$created_at, $last_name,$name, $image, $email, $modalStatus, $password, $password_confirmation, $myimage;
     public $curPage = 'User';
     public $recordId = 0;
     public function render()
