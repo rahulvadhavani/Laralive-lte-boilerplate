@@ -10,9 +10,9 @@ return [
             'route' => 'users',
             'iconClass' => 'fa-solid fa-users',
         ],
-        'Profile' => [
+        'Profile & Setting' => [
             'route' => 'profile',
-            'iconClass' => 'fa-regular fa-user',
+            'iconClass' => 'fa-solid fa-sliders',
         ],
         'Static Pages' => [
             'active-route' => 'admin/static-page/*',
